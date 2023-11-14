@@ -47,6 +47,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.0
+      with:
+        node-version: 10.16.3    
+    - run: npm install
+      working-directory: TailwindTraders.Website/Source/Tailwind.Traders.Web/ClientApp
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
